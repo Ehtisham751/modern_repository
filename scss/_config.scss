@@ -4,10 +4,6 @@ $show-home-image: true;
 $home-image: url(../img/backgound.jpg);
 $backgrpund-opacity: 0.8;
 
-* {
-  box-sizing: border-box;
-}
-
 @mixin easeOut {
   transition: all 0.5s ease-out;
 }
@@ -33,5 +29,30 @@ $backgrpund-opacity: 0.8;
         z-index: -1;
       }
     }
+  }
+}
+
+// Media query Mixin
+@mixin mediaSm {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin mediaXl {
+  @media (min-width: 1171px) {
+    @content;
   }
 }
