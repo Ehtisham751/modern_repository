@@ -2,7 +2,7 @@ $primary-color: #444;
 $secondary-color: #eece1a;
 $show-home-image: true;
 $home-image: url(../img/backgound.jpg);
-$backgrpund-opacity: 0.8;
+$background-opacity: 0.8;
 
 @mixin easeOut {
   transition: all 0.5s ease-out;
@@ -23,7 +23,7 @@ $backgrpund-opacity: 0.8;
         right: 0;
         width: 100%;
         height: 100%;
-        background: rgba($primary-color, $backgrpund-opacity);
+        background: rgba($primary-color, $background-opacity);
         // background: $primary-color;
         // opacity: 0.9;
         z-index: -1;
@@ -32,7 +32,38 @@ $backgrpund-opacity: 0.8;
   }
 }
 
+// Set Text Color
+@function set-text-color($color) {
+  @if (lightness($color) >40) {
+    @return Black;
+  } @else {
+    @return #fff;
+  }
+}
+
 // Media query Mixin
+// Heights
+
+@mixin mediaMdh {
+  @media (max-height: 500px) {
+    @content;
+  }
+}
+
+@mixin mediaLgh {
+  @media (max-height: 600px) {
+    @content;
+  }
+}
+
+// Widths
+
+@mixin mediaXs {
+  @media (max-width: 400px) {
+    @content;
+  }
+}
+
 @mixin mediaSm {
   @media (max-width: 500px) {
     @content;
